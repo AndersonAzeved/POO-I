@@ -31,6 +31,10 @@ class Venda {
 }
 
 void main() {
-  Produto produto = Produto(preco: 5, nome: 'Bolo');
-  produto.imprimir();
+  Produto produto1 = Produto(preco: 5, nome: 'Bolo');
+  Produto produto2 = Produto(preco: 1, nome: 'Paçoca');
+  Item item1 = Item(produto: produto1, quantidade: 5);
+  Item item2 = Item(produto: produto2, quantidade: 3);
+  Venda venda = Venda(data: "13/03/2023", itens: [item1, item2]);
+  print(venda.total());
 }
