@@ -36,6 +36,5 @@ void main() {
   Item item1 = Item(produto: produto1, quantidade: 5);
   Item item2 = Item(produto: produto2, quantidade: 3);
   Venda venda = Venda(data: "13/03/2023", itens: [item1, item2]);
-
   print(venda.total());
 }
