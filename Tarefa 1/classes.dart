@@ -4,7 +4,8 @@ class Produto {
 
   Produto({required this.preco, required this.nome});
 
-  void imprimir() {
+  void imprimirProduto() {
+    print("---------------------");
     print("Produto: $nome\nPreço: $preco");
   }
 }
@@ -20,14 +21,25 @@ class Item {
   //}
 
   double total2() => quantidade * produto.preco;
+  void imprimirItem() {
+    print("Quantidade: $quantidade");
+    print("Total: ${total2()}");
+    print("---------------------\n");
+  }
 }
 
 class Venda {
   String data;
+
   List<Item> itens;
 
   Venda({required this.data, required this.itens});
   double total() => this.itens.fold(0, (sum, e) => sum + e.total2());
+
+  void imprimirVenda() {
+    print("Data: $data\nTotal da Compra: ${total()}");
+    print("---------------------\n");
+  }
 }
 
 void main() {
@@ -36,5 +48,9 @@ void main() {
   Item item1 = Item(produto: produto1, quantidade: 5);
   Item item2 = Item(produto: produto2, quantidade: 3);
   Venda venda = Venda(data: "13/03/2023", itens: [item1, item2]);
-  print(venda.total());
+  produto1.imprimirProduto();
+  item1.imprimirItem();
+  produto2.imprimirProduto();
+  item2.imprimirItem();
+  venda.imprimirVenda();
 }
