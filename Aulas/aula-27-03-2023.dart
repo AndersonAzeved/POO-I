@@ -68,9 +68,55 @@ void main() {
   venda.imprimirVenda();
   */
 
+  /*
   Venda v = Venda(data: '27-03-2023', itens: [
-    Item(produto: Produto(nome: 'Carne', preco: 50), quantidade: 5),
-    Item(produto: Produto(nome: 'Cachaça', preco: 11.99), quantidade: 10)
+    Item(produto: Produto(nome: 'Carne', preco: 50), quantidade: 2),
+    Item(produto: Produto(nome: 'Cachaça', preco: 11.99), quantidade: 1)
   ]);
   v.imprimirVenda();
+  */
+
+  // Exercício 1
+  var a = A(data: '27-03-2023', b: B(), f: ((int i, int j) => 0));
+  print(a);
+
+  // Exercício 2
+  var c = C(inteiros: [0, 5, 7], mariaPrea: a, g: ((A param) => param.data));
+  print(c);
+}
+
+/* Exercício 1
+  Considere a classe A, que pode ser fabricada com 3 paramentros:
+  - data, um string
+  - b, um objeto de outra classe (B)
+  - f, uma função que recebe dois inteiros e retorna um inteiro
+
+  //var a = A(data: '27-03-2023', b: B(), f: ((int i, int j) => 0));
+*/
+
+class A {
+  String data;
+  B b;
+  Function f;
+
+  A({required this.data, required this.b, required this.f});
+}
+
+class B {}
+
+/* Exercício 2
+  Considere a classe C, que pode ser fabricada com os seguintes parâmetros:
+  - inteiros, uma liste de inteiros
+  - mariaPrea, um objeto A
+  - g, uma função que recebe um A e retorna um string
+
+
+*/
+
+class C {
+  List<int> inteiros;
+  A mariaPrea;
+  Function g;
+
+  C({required this.inteiros, required this.mariaPrea, required this.g});
 }
