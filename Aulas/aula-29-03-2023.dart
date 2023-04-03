@@ -2,9 +2,9 @@
 
 /*
  * flutter style text: https://medium.com/flutter-community/beginners-guide-to-text-styling-in-flutter-3939085d6607
- * flutter row example
+ * flutter row example: https://docs.flutter.dev/development/ui/layout
  * flutter elevated button
- * flutter icon button
+ * flutter icon button: https://api.flutter.dev/flutter/material/IconButton-class.html
 */
 
 import 'package:flutter/material.dart';
@@ -30,6 +30,6 @@ void main() {
                 "A frase, que ganhou a internet em 2015, foi dita por ela durante uma briga na saída da escola, quando tinha 12 anos. "
                 "")
           ])),
-          bottomNavigationBar: Text("WhatsApp")));
+          bottomNavigationBar: Text("Botão 1")));
   runApp(app);
 }
