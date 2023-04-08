@@ -8,21 +8,37 @@ void main() {
           centerTitle: true,
           title: const Text("The Beers"),
         ),
-        body: const Center(
+        body: Center(
           child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
-            Text('\nCatálogo',
+            const Text('\nCatálogo',
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
                 )),
-            Text(
+            const Text(
                 '\nA cerveja é uma bebida produzida a partir da fermentação de cereais, principalmente a cevada maltada.  Acredita-se que tenha sido uma das primeiras bebidas alcoólicas que foram criadas pelo ser humano. Atualmente, é a terceira bebida mais popular do mundo, logo depois da água e do café.',
                 style: TextStyle(
                   fontSize: 10.0,
                 )),
-            ElevatedButton(onPressed: null, child: Text('Botão 1')),
-            ElevatedButton(onPressed: null, child: Text('Botão 2')),
-            ElevatedButton(onPressed: null, child: Text('Botão 3')),
+            ElevatedButton.icon(
+              onPressed: () {},
+              onLongPress: () {},
+              icon:
+                  const Icon(Icons.sports_bar), //icon data for elevated button
+              label: const Text("Cervejar"), //label text
+            ),
+            ElevatedButton.icon(
+              onPressed: () {},
+              onLongPress: () {},
+              icon: const Icon(Icons.info), //icon data for elevated button
+              label: const Text("Informação"), //label text
+            ),
+            ElevatedButton.icon(
+              onPressed: () {},
+              onLongPress: () {},
+              icon: const Icon(Icons.logout), //icon data for elevated button
+              label: const Text("Sair"), //label text
+            ),
           ]),
         ),
         bottomNavigationBar:
