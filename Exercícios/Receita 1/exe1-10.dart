@@ -20,25 +20,32 @@ void main() {
                 style: TextStyle(
                   fontSize: 10.0,
                 )),
-            ElevatedButton.icon(
-              onPressed: () {},
-              onLongPress: () {},
-              icon:
-                  const Icon(Icons.sports_bar), //icon data for elevated button
-              label: const Text("Cervejar"), //label text
-            ),
-            ElevatedButton.icon(
-              onPressed: () {},
-              onLongPress: () {},
-              icon: const Icon(Icons.info), //icon data for elevated button
-              label: const Text("Informação"), //label text
-            ),
-            ElevatedButton.icon(
-              onPressed: () {},
-              onLongPress: () {},
-              icon: const Icon(Icons.logout), //icon data for elevated button
-              label: const Text("Sair"), //label text
-            ),
+            Expanded(
+                child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () {},
+                  onLongPress: () {},
+                  icon: const Icon(
+                      Icons.sports_bar), //icon data for elevated button
+                  label: const Text("Cervejar"), //label text
+                ),
+                ElevatedButton.icon(
+                  onPressed: () {},
+                  onLongPress: () {},
+                  icon: const Icon(Icons.info), //icon data for elevated button
+                  label: const Text("Informação"), //label text
+                ),
+                ElevatedButton.icon(
+                  onPressed: () {},
+                  onLongPress: () {},
+                  icon:
+                      const Icon(Icons.logout), //icon data for elevated button
+                  label: const Text("Sair"), //label text
+                ),
+              ],
+            )),
           ]),
         ),
         bottomNavigationBar:
