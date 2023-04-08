@@ -9,7 +9,7 @@ void main() {
           title: const Text("The Beers"),
         ),
         body: const Center(
-          child: Column(children: [
+          child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
             Text('\nCatálogo',
                 style: TextStyle(
                   fontSize: 20.0,
@@ -20,6 +20,9 @@ void main() {
                 style: TextStyle(
                   fontSize: 10.0,
                 )),
+            ElevatedButton(onPressed: null, child: Text('Botão 1')),
+            ElevatedButton(onPressed: null, child: Text('Botão 2')),
+            ElevatedButton(onPressed: null, child: Text('Botão 3')),
           ]),
         ),
         bottomNavigationBar:
