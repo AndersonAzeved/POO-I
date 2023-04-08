@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 
 void main() {
   MaterialApp app = MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.grey),
+      theme: ThemeData(
+        fontFamily: 'Fantasy',
+        brightness: Brightness.light,
+        primarySwatch: Colors.red,
+      ),
       home: Scaffold(
+        backgroundColor: Color.fromARGB(255, 223, 178, 180),
         appBar: AppBar(
           centerTitle: true,
           title: const Text("The Beers"),
