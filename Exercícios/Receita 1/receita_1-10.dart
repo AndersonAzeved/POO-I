@@ -22,7 +22,23 @@ void main() {
                 )),
           ]),
         ),
-        bottomNavigationBar: const Text("Botão 1"),
+        bottomNavigationBar: BottomNavigationBar(
+            currentIndex: 0,
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.bookmarks),
+                label: 'News',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.menu),
+                label: 'Menu',
+              ),
+            ],
+            onTap: (int indexOfItem) {}),
       ));
   runApp(app);
 }
