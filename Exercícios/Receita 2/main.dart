@@ -34,11 +34,15 @@ class NewBody extends StatelessWidget {
   }
 }
 
+class NewAppBar extends AppBar {
+  NewAppBar({super.title});
+}
+
 void main() {
   MaterialApp app = MaterialApp(
       theme: ThemeData(primarySwatch: Colors.deepPurple),
       home: Scaffold(
-        appBar: AppBar(title: Text("Dicas")),
+        appBar: NewAppBar(title: const Text('Dicas')),
         body: NewBody(),
         bottomNavigationBar: NewNavBar(),
       ));
