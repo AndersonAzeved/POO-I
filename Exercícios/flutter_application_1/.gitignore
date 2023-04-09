@@ -45,6 +45,8 @@ analysis_benchmark.json
 /macos
 /web
 /windows
+/linux
+/test
 .metadata
 analysis_options.yaml
 pubspec.yaml
