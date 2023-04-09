@@ -1,8 +1,9 @@
+//https://sites.google.com/view/fabricio10/p%C3%A1gina-inicial/cursos/oo-dart/dartreceita2
+
 import 'package:flutter/material.dart';
 
 class NewNavBar extends StatelessWidget {
   NewNavBar();
-
   void botaoFoiTocado(int index) {
     print("Tocaram no botão $index");
   }
@@ -38,14 +39,23 @@ class NewAppBar extends AppBar {
   NewAppBar({super.title});
 }
 
+class MyApp extends StatelessWidget {
+  MyApp();
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        theme: ThemeData(primarySwatch: Colors.deepPurple),
+        home: Scaffold(
+          appBar: NewAppBar(title: const Text('Dicas')),
+          body: NewBody(),
+          bottomNavigationBar: NewNavBar(),
+        ));
+  }
+}
+
 void main() {
-  MaterialApp app = MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.deepPurple),
-      home: Scaffold(
-        appBar: NewAppBar(title: const Text('Dicas')),
-        body: NewBody(),
-        bottomNavigationBar: NewNavBar(),
-      ));
+  MyApp app = MyApp();
 
   runApp(app);
 }
