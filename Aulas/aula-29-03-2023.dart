@@ -7,6 +7,9 @@
  * flutter icon button: https://api.flutter.dev/flutter/material/IconButton-class.html
 */
 
+
+
+/* COMEÇA AQUI O APP
 import 'package:flutter/material.dart';
 
 void main() {
@@ -33,3 +36,5 @@ void main() {
           bottomNavigationBar: Text("Botão 1")));
   runApp(app);
 }
+
+*/ //TERMINA AQUI O APP
