@@ -2,23 +2,27 @@
 
 import 'package:flutter/material.dart';
 
+void main() {
+  MyApp app = MyApp();
+
+  runApp(app);
+}
+
 class NewNavBar extends StatelessWidget {
-  NewNavBar();
+  final List<Icon> objetcs;
+
+  NewNavBar({this.objetcs = const []});
   void botaoFoiTocado(int index) {
     print("Tocaram no botão $index");
   }
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(onTap: botaoFoiTocado, items: const [
-      BottomNavigationBarItem(
-        label: "Cafés",
-        icon: Icon(Icons.coffee_outlined),
-      ),
-      BottomNavigationBarItem(
-          label: "Cervejas", icon: Icon(Icons.local_drink_outlined)),
-      BottomNavigationBarItem(label: "Nações", icon: Icon(Icons.flag_outlined))
-    ]);
+    return BottomNavigationBar(
+        onTap: botaoFoiTocado,
+        items: objetcs
+            .map((obj) => BottomNavigationBarItem(icon: obj, label: 'Botão'))
+            .toList());
   }
 }
 
@@ -49,13 +53,13 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
           appBar: NewAppBar(title: const Text('Dicas')),
           body: NewBody(),
-          bottomNavigationBar: NewNavBar(),
+          bottomNavigationBar: NewNavBar(
+            objetcs: const [
+              Icon(Icons.coffee_outlined),
+              Icon(Icons.local_drink_outlined),
+              Icon(Icons.flag_outlined)
+            ],
+          ),
         ));
   }
-}
-
-void main() {
-  MyApp app = MyApp();
-
-  runApp(app);
 }
