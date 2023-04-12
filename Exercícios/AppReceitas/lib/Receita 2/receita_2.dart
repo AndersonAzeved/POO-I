@@ -11,7 +11,9 @@ void main() {
 class NewNavBar extends StatelessWidget {
   final List<Icon> objetcs;
 
-  NewNavBar({this.objetcs = const []});
+  NewNavBar({this.objetcs = const [
+              Icon(Icons.coffee_outlined),
+              Icon(Icons.local_drink_outlined),]});
   void botaoFoiTocado(int index) {
     print("Tocaram no botão $index");
   }
