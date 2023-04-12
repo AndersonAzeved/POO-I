@@ -14,6 +14,16 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           appBar: AppBar(
+            leading: const Icon(Icons.home),
+            actions: [
+              PopupMenuButton(itemBuilder: (context) {
+                return const [
+                  PopupMenuItem<int>(value: 0, child: Text('Vermelho')),
+                  PopupMenuItem<int>(value: 1, child: Text('Verde')),
+                  PopupMenuItem<int>(value: 2, child: Text('Azul'))
+                ];
+              })
+            ],
             title: const Text("Dicas"),
           ),
           body: DataBodyWidget(objects: const [
