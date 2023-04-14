@@ -13,18 +13,9 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(primarySwatch: Colors.deepPurple),
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          appBar: AppBar(
-            leading: const Icon(Icons.home),
-            actions: [
-              PopupMenuButton(itemBuilder: (context) {
-                return const [
-                  PopupMenuItem<int>(value: 0, child: Text('Vermelho')),
-                  PopupMenuItem<int>(value: 1, child: Text('Verde')),
-                  PopupMenuItem<int>(value: 2, child: Text('Azul'))
-                ];
-              })
-            ],
-            title: const Text("Dicas"),
+          appBar: NewAppBar(
+            titulo: 'Dicas',
+            objects: const ['Verde', 'Azul', 'Cinza'],
           ),
           body: DataBodyWidget(objects: const [
             "La Fin Du Monde - Bock - 65 ibu",
@@ -40,6 +31,22 @@ class MyApp extends StatelessWidget {
           ),
         ));
   }
+}
+
+class NewAppBar extends AppBar {
+  final List<String> objects;
+  final String titulo;
+
+  NewAppBar(
+      {this.titulo = "Title", this.objects = const ['Cor 1', 'Cor 2', 'Cor 3']})
+      : super(title: Text(titulo), leading: const Icon(Icons.home), actions: [
+          PopupMenuButton(
+            itemBuilder: (context) => objects
+                .map((obj) => PopupMenuItem<int>(
+                    value: objects.indexOf(obj), child: Text(obj)))
+                .toList(),
+          )
+        ]);
 }
 
 class NewNavBar extends StatelessWidget {
